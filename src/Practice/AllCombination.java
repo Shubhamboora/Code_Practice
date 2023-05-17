@@ -3,7 +3,6 @@ package Practice;
 public class AllCombination {
 	public static void CombinationUtil(int[] arr, int[] subArr, int position, int j, int r) {
 
-		// checking
 		if(position == r) {
 			for(int i : subArr)
 				System.out.print(i+" ");
