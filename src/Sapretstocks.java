@@ -4,8 +4,8 @@ public class Sapretstocks {
 
     public static void main(String[] args) {
 
-        Arrays.stream(Sapretstocks.arr).forEach(a->{
-            if (a.matches("^[a-zA-Z]+$")) System.out.print(a+",");
+        Arrays.stream(Sapretstocks.arr).forEach(a -> {
+            if (a.matches("^[a-zA-Z]+$")) System.out.print(a + ",");
         });
     }
 

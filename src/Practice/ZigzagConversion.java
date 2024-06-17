@@ -15,7 +15,7 @@ public class ZigzagConversion {
         int size = Math.min(numRows, s.length());
 
         //Initializing StringBuilder into list acc to numRows
-        for (int i=0;i<size;i++)list.add(new StringBuilder());
+        for (int i = 0; i < size; i++) list.add(new StringBuilder());
 
         boolean movingDown = true;
         list.get(0).append(s.charAt(0));
@@ -23,12 +23,12 @@ public class ZigzagConversion {
 
 
         //Result: PAHNAPLSIIGYIR
-        for (int i=1; i<s.length();i++){
+        for (int i = 1; i < s.length(); i++) {
             char ch = s.charAt(i);
             list.get(builder).append(ch);
 
             //If working on last stringBuilder of list movement need to be reversed.
-            if (builder == size-1) {
+            if (builder == size - 1) {
                 builder--;
                 movingDown = false;
                 continue;
@@ -40,12 +40,12 @@ public class ZigzagConversion {
                 continue;
             }
             //++, -- based upon movement direction.
-            builder += movingDown?1:-1;
+            builder += movingDown ? 1 : -1;
 
         }
 
         StringBuilder result = new StringBuilder();
-        list.forEach(str-> result.append(str));
+        list.forEach(str -> result.append(str));
 
         return result.toString();
     }

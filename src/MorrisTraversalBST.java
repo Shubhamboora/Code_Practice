@@ -1,43 +1,38 @@
 // Java program to print inorder 
 // traversal without recursion
 // and stack
-  
+
 /* A binary tree tNode has data,
    a pointer to left child
    and a pointer to right child */
 class tNode {
     int data;
     tNode left, right;
-  
-    tNode(int item)
-    {
+
+    tNode(int item) {
         data = item;
         left = right = null;
     }
 }
-  
+
 public class MorrisTraversalBST {
     tNode root;
-  
+
     /* Function to traverse a 
        binary tree without recursion
        and without stack */
-    void MorrisTraversal(tNode root)
-    {
+    void MorrisTraversal(tNode root) {
         tNode current, pre;
-  
+
         if (root == null)
             return;
-  
+
         current = root;
-        while (current != null) 
-        {
-            if (current.left == null) 
-            {
+        while (current != null) {
+            if (current.left == null) {
                 System.out.print(current.data + " ");
                 current = current.right;
-            }
-            else {
+            } else {
                 /* Find the inorder 
                     predecessor of current
                  */
@@ -58,22 +53,20 @@ public class MorrisTraversalBST {
                    to restore the original 
                    tree i.e., fix
                    the right child of predecessor*/
-                else
-                {
+                else {
                     pre.right = null;
                     System.out.print(current.data + " ");
                     current = current.right;
                 } /* End of if condition pre->right == NULL
-                   */
-  
+                 */
+
             } /* End of if condition current->left == NULL*/
-  
+
         } /* End of while */
-    } 
-  
+    }
+
     // Driver Code
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         /* Constructed binary tree is
                1
              /   \
@@ -81,16 +74,16 @@ public class MorrisTraversalBST {
           /   \
          4     5
         */
-    	MorrisTraversalBST tree = new MorrisTraversalBST();
+        MorrisTraversalBST tree = new MorrisTraversalBST();
         tree.root = new tNode(1);
         tree.root.left = new tNode(2);
         tree.root.right = new tNode(3);
         tree.root.left.left = new tNode(4);
         tree.root.left.right = new tNode(5);
-  
+
         tree.MorrisTraversal(tree.root);
     }
 }
-  
+
 // This code has been contributed by Mayank
 // Jaiswal(mayank_24)
