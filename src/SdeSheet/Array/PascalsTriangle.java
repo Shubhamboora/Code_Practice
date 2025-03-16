@@ -8,17 +8,17 @@ public class PascalsTriangle {
     public static void main(String[] args){
 
         //Generate single value
-        System.out.println(GenerateValueTwo(20, 8));
+        System.out.println(GenerateValueTwo(5, 3));
 
         System.out.println();
 
         //Generate row.
-        List<Long> row = generateRow(20);
+        List<Long> row = generateRow(5);
         row.stream().forEach(element -> System.out.print(element + " "));
 
         //Generate complete triangle
         System.out.println();
-        List<List<Long>> pascalsTriangle = printPascatsTriangle(20);
+        List<List<Long>> pascalsTriangle = printPascatsTriangle(5);
         pascalsTriangle.stream().forEach(list ->{
             list.stream().forEach(element -> System.out.print(element + " "));
                     System.out.println();
