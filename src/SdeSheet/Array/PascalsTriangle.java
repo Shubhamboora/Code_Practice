@@ -8,7 +8,7 @@ public class PascalsTriangle {
     public static void main(String[] args){
 
         //Generate single value
-        System.out.println(GenerateValueTwo(5, 3));
+        System.out.println(GenerateValue(5, 3));
 
         System.out.println();
 
